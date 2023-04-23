@@ -1,1 +1,3 @@
-# FigurasGeometricasPlanas
+# Figuras Geométricas
+
+Trabalho de POO

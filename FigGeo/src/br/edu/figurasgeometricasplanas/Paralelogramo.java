@@ -1,21 +1,54 @@
 package br.edu.figurasgeometricasplanas;
 
+import java.util.Scanner;
+
 public class Paralelogramo {
-   
-	public double base;
-	public double altura;
-    public double area;
+
+	Scanner sc = new Scanner(System.in);
+	
+	private double base;
+	private double altura;
+    private double area;
 	
 	public void CalcArea1() {
 		area = base * altura;
-		System.out.println(area);
 	}
 	
+	public double getBase() {
+		return base;
+	}
+
+	public void setBase(double base) {
+		if (base > 0) {
+		this.base = base;
+		}
+	}
+
+	public double getAltura() {
+		return altura;
+	}
+
+	public void setAltura(double altura) {
+		if (altura > 0) {
+		this.altura = altura;
+		}
+	}
+
+	public double getArea() {
+		return area;
+	}
+
+	public void setArea(double area) {
+		this.area = area;
+	}
+
 	public void CalcArea2(double b, double h) {
-		base = b;
-		altura = h;
+		System.out.println("\nDigite a medida da base:");
+		b = sc.nextDouble();
+		System.out.println("Digite a medida da altura:");
+		h = sc.nextDouble();
 		area = b * h;
-		System.out.println(area);
+		System.out.println("\nÁREA = " + area);
 	}
 	public double CalcArea3(double b, double h) {
 		base = b;
@@ -24,7 +57,7 @@ public class Paralelogramo {
 		return area;
 	}
 	public void listaAtributos() {
-		System.out.println(base + " " + altura + " " + area);
+		System.out.println("\nATRIBUTOS \n\nbase: " + getBase() + "\naltura: " + getAltura());
 	
 	}
 	

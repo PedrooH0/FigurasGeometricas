@@ -1,12 +1,27 @@
 package br.edu.figurasgeometricasplanas;
 
+import java.util.Scanner;
+
 public class Quadrado {
-	public double lado;
-	public double area;
+    
+	private double lado;
+	
+	public void setLado(double lado) {
+		if (lado > 0) {
+		  this.lado = lado;
+		}
+	}
+    
+	public double getArea() {
+		return area;
+	}
+
+	private double area;
+	
+	Scanner sc = new Scanner(System.in);
 	
 	public void CalcArea1() {
 		area = Math.pow(lado, 2);
-		System.out.println(area);
 	}
 	
 	public void CalcArea2(double l) {
@@ -21,7 +36,7 @@ public class Quadrado {
 		return area;
 	}
 	public void listaAtributos() {
-		System.out.println(lado + " " + area);
+		System.out.println("\nATRIBUTO\n\nlado: " + lado);
 	}
-	
+		
 }

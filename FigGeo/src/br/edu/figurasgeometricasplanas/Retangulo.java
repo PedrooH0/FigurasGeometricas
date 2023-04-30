@@ -1,16 +1,44 @@
 package br.edu.figurasgeometricasplanas;
 
-public class Retangulo {
+import java.util.Scanner;
 
-	public double base;
-	public double altura;
-	public double area;
+public class Retangulo {
+  
+    Scanner sc = new Scanner(System.in);
+	
+	private double base;
+	private double altura;
+    private double area;
 	
 	public void CalcArea1() {
 		area = base * altura;
-		System.out.println(area);
 	}
 	
+	public double getBase() {
+		return base;
+	}
+
+	public void setBase(double base) {
+		if (base > 0) {
+		  this.base = base;
+		}
+	}
+
+	public double getAltura() {
+		return altura;
+	}
+
+	public void setAltura(double altura) {
+	   if (altura > 0) {	
+		this.altura = altura;
+	   }
+	}
+
+	public double getArea() {
+		return area;
+	}
+
+
 	public void CalcArea2(double b, double h) {
 		base = b;
 		altura = h;
@@ -24,9 +52,8 @@ public class Retangulo {
 		return area;
 	}
 	public void listaAtributos() {
-		System.out.println(base + " " + altura + " " + area);
+		System.out.println("\nATRIBUTOS \n\nbase: " + getBase() + "\naltura: " + getAltura());
 	
 	}
-	
 	
 }

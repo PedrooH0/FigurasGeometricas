@@ -1,14 +1,42 @@
 package br.edu.figurasgeometricasplanas;
 
+import java.util.Scanner;
+
 public class Losango {
-   
-	public double diagonalMaior;
-	public double diagonalMenor;
-	public double area;
+
+	Scanner sc = new Scanner(System.in);
+	
+	private double diagonalMaior;
+	private double diagonalMenor;
+	private double area;
+	
+	public double getDiagonalMaior() {
+		return diagonalMaior;
+	}
+
+	public void setDiagonalMaior(double diagonalMaior) {
+		if (diagonalMaior > 0) {
+		this.diagonalMaior = diagonalMaior;
+		}
+	}
+
+	public double getDiagonalMenor() {
+		return diagonalMenor;
+	}
+
+	public void setDiagonalMenor(double diagonalMenor) {
+		if (diagonalMaior > 0) {
+		this.diagonalMenor = diagonalMenor;
+		}
+	}
+
+	public double getArea() {
+		return area;
+	}
+
 	
 	public void CalcArea1() {
 		area = diagonalMaior * diagonalMenor/2;
-		System.out.println(area);
 	}
 	
 	public void CalcArea2(double D, double d) {
@@ -26,7 +54,8 @@ public class Losango {
 	
 	
 	public void listaAtributos() {
-		System.out.println(diagonalMaior + " " + diagonalMenor + " " + area);
+		System.out.println("\nATRIBUTOS \n\ndiagonal maior: " + getDiagonalMaior() + "\ndiagonal menor: " + getDiagonalMenor());
 	
 	}
+	
 }

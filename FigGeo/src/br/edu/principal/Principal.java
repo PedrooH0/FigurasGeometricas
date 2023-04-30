@@ -3,6 +3,7 @@ package br.edu.principal;
 import br.edu.figurasgeometricasplanas.*;
 import br.edu.figurasgeometricasespaciais.*;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Principal {
 		
@@ -13,70 +14,19 @@ public class Principal {
 		Byte escolhacalc = 0;
 		
 		Scanner sc = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0.00");
 		
 	    System.out.println("Deseja fazer cálculo de: \n1. Figura Plana\n2. Figura Espacial\n");
 	    escolhatip = sc.nextByte();
 	   	
 		if (escolhatip == 1) {
-			System.out.println("\nDeseja fazer cálculo de: \n1. Triângulo\n2. Quadrado\n3. Circulo\n4. Trapézio\n5. Paralelogramo\n6. Losango\n7. Retângulo\n");
-			escolhafig = sc.nextByte();
-			
-			if (escolhafig == 1) {		
-			   Triangulo objTrian = new Triangulo();
-		       objTrian.calcArea1();   
-			}
-			
-			if (escolhafig == 2) {
-		       Quadrado objQuad = new Quadrado();
-			   objQuad.CalcArea1();
-			}
-			
-			if (escolhafig == 3) {
-			   Circulo objCirc = new Circulo();
-			   objCirc.CalcArea1();
-			}
-			
-			if (escolhafig == 4) {		
-               Trapezio objTrap = new Trapezio();
-			   objTrap.CalcArea1();
-			}
-			
-			if (escolhafig == 5) {	
-			   Paralelogramo objParalel = new Paralelogramo();	
-		       objParalel.CalcArea1();
-			}
-			
-		    if (escolhafig == 6) {
-		       Losango objLosan = new Losango();			
-			   objLosan.CalcArea1();
-		    }
-		    
-			if (escolhafig == 7) {
-		       Retangulo objRetan = new Retangulo();
-			   objRetan.CalcArea1();
-			}
+			MenuPlanas mp = new MenuPlanas();
+			mp.FigsPlanas();
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		if (escolhatip == 2) {
 		 
-		  System.out.println("\nDeseja fazer cálculo de: \n1. Cubo\n2. Prisma\n3. Esfera\n4. Cilindro\n5. Tetraedo\n6. Cone\n7. Paralelepípedo\n");
+		  System.out.println("\nDeseja fazer cálculo de: \n\n1. Cubo\n2. Prisma\n3. Esfera\n4. Cilindro\n5. Tetraedo\n6. Cone\n7. Paralelepípedo\n8. Pirâmide\n");
 		  escolhafig = sc.nextByte();
 			
 		 if (escolhafig == 1) {	
@@ -84,19 +34,29 @@ public class Principal {
 			
 			System.out.println("\nESCOLHA O TIPO DE CÁLCULO\n\n1. Área Lateral\n2. Área Total\n3. Volume\n");	
 			escolhacalc = sc.nextByte();
+			
+			System.out.print("\nDigite a medida do lado: ");
+			double x = sc.nextDouble();
+		    objCubo.setLado(x);
+		    
+		    objCubo.listaAtributos();
+		    
 			switch(escolhacalc) {
 			  case 1:
 			    objCubo.CalcAreaLateral();
+			    System.out.println("\nA área lateral do cubo vale: " + df.format(objCubo.getAreaLateral()));
 			    break;
 			  case 2:  
 			    objCubo.CalcAreaTotal();
+			    System.out.println("\nA área total do cubo vale: " + df.format(objCubo.getAreaTotal()));
 			    break;
 			  case 3:  
 			    objCubo.CalcVolume();
+			    System.out.println("\nO volume do cubo vale: " + df.format(objCubo.getVolume()));
 			}
 		 }	
 		 
-		 /*if (escolhafig == 2) {
+		 if (escolhafig == 2) {
 			Prisma objPrism = new Prisma();
 			
 			System.out.println("\nESCOLHA O TIPO DE CÁLCULO\n\n1. Área da Base\n2. Área da Face\n3. Área Lateral\n4. Área Total\n5. Volume\n");	
@@ -118,36 +78,57 @@ public class Principal {
 			 case 5:
 			   objPrism.calcVolume();
 			}
-		 }*/
+		 }
 		 
 		 if (escolhafig == 3) {
 			Esfera objEsfera = new Esfera();
 			
 			System.out.println("\nESCOLHA O TIPO DE CÁLCULO\n\n1. Área Total\n2. Volume\n");	
 		    escolhacalc = sc.nextByte();
+		    
+		    System.out.print("\nÁREA DA ESFERA\n\nDigite a medida do raio: ");
+		    double x = sc.nextDouble();
+		    objEsfera.setRaio(x);
+		    
+		    objEsfera.listaAtributos();
 			switch(escolhacalc) {
 			 case 1:
 			  objEsfera.calcAreaTotal();
+			  System.out.println("\nA área total da esfera vale: " + df.format(objEsfera.getArea()));
 			  break;
 			 case 2:
 			  objEsfera.calcVolume();
+			  System.out.println("\nO volume da esfera vale: " + df.format(objEsfera.getVolume()));
 			}
 		 }
 		 
 		 if (escolhafig == 4) {	
             Cilindro objCilin = new Cilindro();
 			
-            System.out.println("\nESCOLHA O TIPO DE CÁLCULO\n\n1. Área Lateral\n2. Área Total\n2. Volume\n");	
+            System.out.println("\nESCOLHA O TIPO DE CÁLCULO\n\n1. Área Lateral\n2. Área Total\n3. Volume\n");	
 		    escolhacalc = sc.nextByte();
+		    
+		    System.out.print("\nDigite a medida do raio: ");
+			double x = sc.nextDouble();
+			objCilin.setRaio(x);
+			
+			System.out.print("\nDigite a medida da altura: ");
+			x = sc.nextDouble();
+			objCilin.setAltura(x);
+			
+			objCilin.listaAtributos();
 			switch(escolhacalc) {
 			  case 1:
 				objCilin.calcAreaLateral();
+				System.out.println("\nA área lateral da esfera vale: " + df.format(objCilin.getAreaLateral()));
 			    break;
 			  case 2:
 				objCilin.calcAreaTotal();
+				System.out.println("\nA área total da esfera vale: " + df.format(objCilin.getAreaTotal()));
 			    break;
 			  case 3:
 				objCilin.calcVolume();
+				System.out.println("\nA área total da esfera vale: " + df.format(objCilin.getVolume()));
 			}
 		 }
 		 
@@ -201,6 +182,21 @@ public class Principal {
 					break;
 				  case 5:
 				    objParallp.calcVolume();	  
+				}
+			 
+		 }
+		 if (escolhafig == 8) {
+			 Piramide objPiram = new Piramide();
+			 
+			 System.out.println("\nESCOLHA O TIPO DE CÁLCULO\n\n1. Área Total\n2. Volume\n");	
+				escolhacalc = sc.nextByte();
+				switch(escolhacalc) {
+				  case 1:
+				    objPiram.calcAreaTotal();
+				    break;
+				  case 2:  
+				   objPiram.calcVolume();
+				     
 				}
 			 
 		 }

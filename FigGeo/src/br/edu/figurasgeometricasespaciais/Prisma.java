@@ -119,7 +119,7 @@ public class Prisma {
 	}
 	
 	public void listaAtributos () {
-		System.out.println("Aresta da Base: " + arestaBase + "Aresta Lateral: " + arestaLateral + ", Apótema da Base: " + apotemaBase + ", Altura da Base: " + alturaBase + ", Área da Base: " + areaBase + ", Área da Face: " + areaFace + ", Área Lateral: " + areaLateral + ", Altura do Prisma: " + altura + ", Área Total: " + areaTotal + " e Volume: " + volume);
+		System.out.println("Aresta da Base: " + arestaBase + "Aresta Lateral: " + arestaLateral + ", Apótema da Base: " + apotemaBase + ", Altura da Base: " + alturaBase + ", Área da Base: " + areaBase + ", Área da Face: " + areaFace + ", Área Lateral: " + areaLateral + ", Altura do Prisma: " + altura /*+ ", Área Total: " + areaTotal + " e Volume: " + volume*/);
 	}
 	
 }

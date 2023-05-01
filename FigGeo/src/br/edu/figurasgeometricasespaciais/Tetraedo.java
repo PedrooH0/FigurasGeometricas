@@ -9,28 +9,57 @@ public class Tetraedo {
 	Scanner sc = new Scanner(System.in);
 	DecimalFormat df = new DecimalFormat("0.00");
 	
-	public byte tipo;
-	public double arestaBase;
-	public double alturaBase;
-	public double areaBase;
-	public double altura;
-	public double area;
-	public double volume;
+	private byte tipo;
+	private double arestaBase;
+	private double alturaBase;
+	private double areaBase;
+	private double altura;
+	private double area;
+	private double volume;
 	
+	public double getArestaBase() {
+		return arestaBase;
+	}
+	public void setArestaBase(double arestaBase) {
+		this.arestaBase = arestaBase;
+	}
+	public double getAlturaBase() {
+		return alturaBase;
+	}
+	public void setAlturaBase(double alturaBase) {
+		this.alturaBase = alturaBase;
+	}
+	public double getAreaBase() {
+		return areaBase;
+	}
+	
+	public double getAltura() {
+		return altura;
+	}
+	public void setAltura(double altura) {
+		this.altura = altura;
+	}
+	public double getArea() {
+		return area;
+	}
+	
+	public double getVolume() {
+		return volume;
+	}
+
+	public Triangulo getArealateral() {
+		return arealateral;
+	}
+
 	Triangulo arealateral = new Triangulo();
 	
-	public void calcAreaTotal() {
-	 System.out.println("O Tetraedo é: \n\n1. Regular\n2. Não Regular\n");
+	 public void calcAreaTotal() {
+	 /*System.out.println("O Tetraedo é: \n\n1. Regular\n2. Não Regular\n");
 	 tipo = sc.nextByte();
-	 if (tipo == 1) {
-		 System.out.println("\nDigite a medida da aresta da base: ");
-		 arestaBase = sc.nextDouble();
-		 area = Math.pow(arestaBase, 2) * Math.sqrt(3);
-		 System.out.println("\nÁREA TOTAL: " + df.format(area));
-	 }
-	 if (tipo == 2) {
-		 System.out.println("\nDigite a medida da aresta da base: ");
-		 arestaBase = sc.nextDouble();
+	 if (tipo == 1) {*/
+		 area = Math.pow(getArestaBase(), 2) * Math.sqrt(3);
+	 //}
+	 /*if (tipo == 2) {
 		 System.out.println("\nDigite a medida da altura da base: ");
 		 alturaBase = sc.nextDouble();
 		 areaBase = (arestaBase * alturaBase)/2;
@@ -42,31 +71,22 @@ public class Tetraedo {
 		 area = fl + area;
 		 fl = arealateral.calcArea4();
 		 area = fl + area;
-		 System.out.println("\nÁREA TOTAL = " + df.format(area));
-	 }
-  }
+	 }*/
+    }
 	public void calcVolume() {
-		System.out.println("O Tetraedo é: \n\n1. Regular\n2. Não Regular\n");
+		 /*System.out.println("O Tetraedo é: \n\n1. Regular\n2. Não Regular\n");
 		 tipo = sc.nextByte();
-		 if (tipo == 1) {
-			 System.out.println("\nDigite a medida da aresta da base: ");
-			 arestaBase = sc.nextDouble();
-			 volume = Math.pow(arestaBase, 3)/12 * Math.sqrt(2);
-			 System.out.println("\nVOLUME = " + df.format(volume));
-		 }
+		 if (tipo == 1) {*/
+			 volume = Math.pow(getArestaBase(), 3)/12 * Math.sqrt(2);
+		 /*}
 		 if (tipo == 2) {
-			 System.out.println("\nDigite a medida da aresta da base: ");
-			 arestaBase = sc.nextDouble();
 			 System.out.println("\nDigite a medida da altura da base: ");
 			 alturaBase = sc.nextDouble();
-			 areaBase = (arestaBase * alturaBase)/2;
-			 System.out.println("\nDigite a medida da altura do tetraedo");
-			 altura = sc.nextDouble();
-			 volume = (areaBase * altura)/3;
-			 System.out.println("\nVOLUME = " + df.format(volume));
-		 }
+			 areaBase = (getArestaBase() * alturaBase)/2;
+			 volume = (areaBase * getAltura())/3;
+		 }*/
 	}
 	public void listaAtributos () {
-		System.out.println("Aresta da Base: " + arestaBase + ", Altura da Base: " + alturaBase + ", Área da Base: " + areaBase + ", Altura da Pirâmide: " + altura + ", Área Total: " + area + " e Volume: " + volume);
+		System.out.println("\nATRIBUTOS\n\naresta da base: " + getArestaBase() /*+ "\naltura da base: " + getAlturaBase() + "\nárea da base: " + areaBase + "\naltura do tetraedro: " + getAltura() + ", Área Total: " + area + " e Volume: " + volume*/);
 	}
 }
